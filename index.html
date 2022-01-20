@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <div class="main">
+        <header class="nbar" style="position: fixed;">
+            <ul style="text-align: right;">
+                <li><a href="#mains">Home</a></li>
+                <li><a href="#contact">contacts</a></li>
+            </ul>
+        </header>
+        <div class="title">
+            <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Parking lot management system</h1>
+        </div>
+    </div>
+
+    <div id="mains" style="background: rgb(74,247,199);
+    background: linear-gradient(133deg, rgba(74,247,199,1) 0%, rgba(150,245,255,1) 70%);">
+        <h2 style="margin-top: 0;">Enter the details</h2>
+        <table class="main1">
+            <tr>
+                <td>
+                    <form onsubmit="event.preventDefault();">
+                        <div>
+                            <label>NAME</label>
+                            <input type="text" name="name" id="name" placeholder="Name">
+                        </div>
+                        <div>
+                            <label>VEHICLE NAME</label>
+                            <input type="text" name="vname" id="vname" placeholder="Vehicle Name">
+                        </div>
+                        <div>
+                            <label>VEHICLE NUMBER</label>
+                            <input type="text" name="vnum" id="vnum" placeholder="NN-NN-LL">
+                        </div>
+                        <div>
+                            <label>ENTRY DATE</label>
+                            <input type="date" name="date" id="date">
+                        </div>
+                        <div>
+                            <label>EXIT DATE</label>
+                            <input type="date" name="exdate" id="exdate">
+                        </div>
+                        <div>
+                            <label>ENTRY TIME</label>
+                            <input type="time" name="time" id="time">
+                        </div>
+                        <div>
+                            <label>EXIT TIME</label>
+                            <input type="time" name="extime" id="extime">
+                        </div>
+                        <div>
+                            <input type="submit" value="Add Car" onclick="AddRow()">
+
+                        </div>
+
+                    </form>
+                </td>
+
+            </tr>
+        </table>
+
+        <h2>List Of Cars In Parking Lot</h2>
+        <center>
+            <table id="carlist">
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>VEHICLE NAME</th>
+                        <th>VEHICLE NUMBER</th>
+                        <th>ENTRY DATE</th>
+                        <th>EXIT DATE</th>
+                        <th>ENTRY TIME</th>
+                        <th>EXIT TIME </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </center>
+        <script>
+            var list1 = [];
+            var list2 = [];
+            var list3 = [];
+            var list4 = [];
+            var list5 = [];
+            var list6 = [];
+            var list7 = [];
+
+            var n = 1;
+            var x = 0;
+
+            function AddRow() {
+
+                var AddRown = document.getElementById('carlist');
+                var NewRow = AddRown.insertRow(n);
+
+                list1[x] = document.getElementById("name").value;
+                list2[x] = document.getElementById("vname").value;
+                list3[x] = document.getElementById("vnum").value;
+                list4[x] = document.getElementById("date").value;
+                list5[x] = document.getElementById("exdate").value;
+                list6[x] = document.getElementById("time").value;
+                list7[x] = document.getElementById("extime").value;
+
+
+                var cel1 = NewRow.insertCell(0);
+                var cel2 = NewRow.insertCell(1);
+                var cel3 = NewRow.insertCell(2);
+                var cel4 = NewRow.insertCell(3);
+                var cel5 = NewRow.insertCell(4);
+                var cel6 = NewRow.insertCell(5);
+                var cel7 = NewRow.insertCell(6);
+
+                cel1.innerHTML = list1[x];
+                cel2.innerHTML = list2[x];
+                cel3.innerHTML = list3[x];
+                cel4.innerHTML = list4[x];
+                cel5.innerHTML = list5[x];
+                cel6.innerHTML = list6[x];
+                cel7.innerHTML = list7[x];
+
+                n++;
+                x++;
+            }
+        </script>
+    </div>
+    <footer id="contact" class="contacts">
+        <div class="mains">
+            <div class="grids">
+                <a href="mailto:srmap@gmail.com" style="font-size: 30px; color: white;margin-left: -100px;">xyz@gmail.com</a><br><br>
+                <a href="tel:(596) 518-5872 " style="font-size: 30px; color: white; margin-left: -100px;">(596) 518-5872</a><br><br>
+                <a href="tel:+91-755-5806-999 " style="font-size: 30px; color: white; margin-left: -100px;">+91-755-5806-999</a>
+            </div>
+            <div class="grids">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
